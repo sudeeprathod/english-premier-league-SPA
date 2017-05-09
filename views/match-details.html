@@ -1,0 +1,96 @@
+
+<section>
+     <div class="header-content">
+        <div class="header-content-inner">
+           <div class="well">
+             <div style="color:black">
+                <div style="font-size: 3vmin">
+                <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th colspan="3" class="text-center" style="color: #FF1744;">
+                                    Team1 vs Team2
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3">
+                                    Round Name: {{currentMatch.matchDate}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    Match Date: {{currentMatch.roundName}}
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team Names:
+                                </td>
+                                <td>
+                                   <a ng-href="#/individual-teamVeiw/{{currentMatch.teamCode1}}" title="View Team Statistics"> {{currentMatch.teamName1}}</a>
+                                </td>
+                                <td>
+                                    <a ng-href="#/individual-teamVeiw/{{currentMatch.teamCode2}}" title="View Team Statistics">{{currentMatch.teamName2}}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team Keys:
+                                </td>
+                                <td>
+                                    {{currentMatch.teamKey1}}
+                                </td>
+                                <td>
+                                    {{currentMatch.teamKey2}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team Codes:
+                                </td>
+                                <td>
+                                    {{currentMatch.teamCode1}}
+                                </td>
+                                <td>
+                                    {{currentMatch.teamCode2}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team Scores:
+                                </td>
+                                <td>
+
+                                    <span>{{currentMatch.teamScore1}}</span><span ng-show="currentMatch.teamScore1 === null">"-"</span>
+                                </td>
+                                <td>
+                                    <span>{{currentMatch.teamScore2}}</span><span ng-show="currentMatch.teamScore2 === null">"-"</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                
+                            </tr>
+                        </tbody>
+                  </table>
+                  <a href="#/" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-home"></span> Go Back To Homepage</a>
+                
+                </div>
+                </div>
+               </div>
+                        
+             </div>
+           </div>
+           </section>
+    
+
+    
+
+   
+
+
+
+
+    

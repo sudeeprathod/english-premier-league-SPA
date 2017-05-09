@@ -1,0 +1,108 @@
+
+<section>
+        <div class="header-content" >
+            <div class="header-content-inner">
+                 <div class="well">
+                    <div style="font-size: 3vmin">
+                    <div style="color:black">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class=" col-xs-12">Search By Team Name: </label>
+                                <div class="col-xs-12">
+                                    <input type="text" class="search form-control input-sm" ng-model="searchByTeamName"  placeholder="Enter Team Name" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class=" col-xs-12">Search By Team 1 Goals: </label>
+                                <div class="col-xs-12">
+
+                                    <input type="text" class="search form-control input-sm" ng-model="searchByScore1.score1" placeholder="Enter Score To Search team" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class=" col-xs-12">Search By Team 2 Goals: </label>
+                                <div class="col-xs-12">
+                                    <input type="text" class="search form-control input-sm" ng-model="searchByScore2.score2"  placeholder="Enter Score To Search team" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class=" col-xs-12">Search By Year: </label>
+                                <div class="col-xs-12">
+                                    <input type="text" class="search form-control input-sm" ng-model="searchByYear"  placeholder="Enter Year To Search" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                 </div>
+             </div>
+            </div>
+        </div>
+        </section>
+    
+
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+           <div style="font-size: 2.5vmin"> 
+             <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                           <tr>
+                                <th class="text-center">
+                                    Date
+                                </th>
+                                <th class="text-center">
+                                    Team 1
+                                </th>
+                                <th class="text-center">
+                                    Team 2
+                                </th>
+                                <th class="text-center">
+                                    Score 1
+                                </th>
+                                <th class="text-center">
+                                    Score 2
+                                </th>
+                                <th class="text-center">
+                                    View Match
+                                </th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody ng-repeat='round in sudeep.combinedData'>
+                            
+                          <tr ng-repeat='match in round.matches  | filter:searchTeam | filter:searchByScore1 | filter:searchByScore2 | filter:searchByYear'>
+                                 <td>
+                                    <p style="color:black">{{match.date}} </p>
+                                    
+                                 </td>
+                                 <td>
+                                   <a ng-href="#/individual-teamVeiw/{{ match.team1.code }}" title="View Team Statistics"> <p style="color:black">{{match.team1.name}} </p></a>
+                                    
+                                 </td>
+                                 <td>
+                                    <a ng-href="#/individual-teamVeiw/{{ match.team2.code }}" title="View Team Statistics"><p style="color:black">{{match.team2.name}} </p>
+                                    
+                                 </td>
+                                 <td>
+                                    <p style="color:black"><span>{{match.score1 }}</span><span ng-show="match.score1 === null">-</span></p>
+                                    
+                                 </td>
+                                 <td>
+                                    <p style="color:black"><span>{{match.score1 }}</span><span ng-show="match.score1 === null">-</span></p>
+                                    
+                                 </td>
+                                  <td>
+                                    <a ng-href='#/match-details/{{ match.date | date:"yyyyMMdd" }}/{{ match.team1.code }}'>                <p style="color:blue">View Match Details</p> </a>
+                                    
+                                 </td>
+                                
+                           </tr>
+
+                        </tbody>
+             </table>
+         </div>
+         </div>
+        </div>
+    </section>
